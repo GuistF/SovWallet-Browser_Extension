@@ -59,7 +59,7 @@ class DetectTokensController {
           this._preferences.addToken(contractAddress, contracts[contractAddress].symbol, contracts[contractAddress].decimals, this.network)
         }
       } else {
-        warn(`Nifty Wallet - DetectTokensController balance fetch failed for ${contractAddress}.`, error)
+        warn(`SOV Wallet - DetectTokensController balance fetch failed for ${contractAddress}.`, error)
       }
     })
   }

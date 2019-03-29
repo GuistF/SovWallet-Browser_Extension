@@ -1321,7 +1321,7 @@ module.exports = class MetamaskController extends EventEmitter {
   setupUntrustedCommunication (connectionStream, originDomain) {
     // Check if new connection is blacklisted
     if (this.blacklistController.checkForPhishing(originDomain)) {
-      log.debug('Nifty Wallet - sending phishing warning for', originDomain)
+      log.debug('SOV Wallet - sending phishing warning for', originDomain)
       this.sendPhishingWarning(connectionStream, originDomain)
       return
     }

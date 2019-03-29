@@ -76,7 +76,7 @@ async function start () {
   }
 
   function displayCriticalError (err) {
-    container.innerHTML = '<div class="critical-error">The Nifty Wallet app failed to load: please open and close Nifty Wallet again to restart.</div>'
+    container.innerHTML = '<div class="critical-error">The SOV Wallet app failed to load: please open and close SOV Wallet again to restart.</div>'
     container.style.height = '80px'
     log.error(err.stack)
     throw err

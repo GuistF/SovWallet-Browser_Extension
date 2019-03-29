@@ -37,7 +37,7 @@ function setupInjection () {
     // append as first child
     container.insertBefore(scriptTag, container.children[0])
   } catch (e) {
-    console.error('Nifty Wallet injection failed.', e)
+    console.error('SOV Wallet injection failed.', e)
   }
 }
 
@@ -48,8 +48,8 @@ function setupInjection () {
 function setupStreams () {
   // setup communication to page and plugin
   const pageStream = new LocalMessageDuplexStream({
-    name: 'nifty-contentscript',
-    target: 'nifty-inpage',
+    name: 'SOV-contentscript',
+    target: 'SOV-inpage',
   })
   const pluginPort = extension.runtime.connect({ name: 'contentscript' })
   const pluginStream = new PortStream(pluginPort)
@@ -59,7 +59,7 @@ function setupStreams () {
     pageStream,
     pluginStream,
     pageStream,
-    (err) => logStreamDisconnectWarning('Nifty Wallet Contentscript Forwarding', err)
+    (err) => logStreamDisconnectWarning('SOV Wallet Contentscript Forwarding', err)
   )
 
   // setup local multistream channels
@@ -70,13 +70,13 @@ function setupStreams () {
     mux,
     pageStream,
     mux,
-    (err) => logStreamDisconnectWarning('Nifty Wallet Inpage', err)
+    (err) => logStreamDisconnectWarning('SOV Wallet Inpage', err)
   )
   pump(
     mux,
     pluginStream,
     mux,
-    (err) => logStreamDisconnectWarning('Nifty Wallet Background', err)
+    (err) => logStreamDisconnectWarning('SOV Wallet Background', err)
   )
 
   // connect ping stream
@@ -85,7 +85,7 @@ function setupStreams () {
     mux,
     pongStream,
     mux,
-    (err) => logStreamDisconnectWarning('Nifty Wallet PingPongStream', err)
+    (err) => logStreamDisconnectWarning('SOV Wallet PingPongStream', err)
   )
 
   // connect phishing warning stream
@@ -203,7 +203,7 @@ function blacklistedDomainCheck () {
  * Redirects the current page to a phishing information page
  */
 function redirectToPhishingWarning () {
-  console.log('Nifty Wallet - routing to Phishing Warning component')
+  console.log('SOV Wallet - routing to Phishing Warning component')
   const extensionURL = extension.runtime.getURL('phishing.html')
   window.location.href = `${extensionURL}#${querystring.stringify({
     hostname: window.location.hostname,
