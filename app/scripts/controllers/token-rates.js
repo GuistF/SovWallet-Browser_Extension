@@ -46,7 +46,7 @@ class TokenRatesController {
       const json = await response.json()
       return json && json.length ? json[0].averagePrice : 0
     } catch (error) {
-      warn(`SOV Wallet - TokenRatesController exchange rate fetch failed for ${address}.`, error)
+      warn(`Nifty Wallet - TokenRatesController exchange rate fetch failed for ${address}.`, error)
       return 0
     }
   }
