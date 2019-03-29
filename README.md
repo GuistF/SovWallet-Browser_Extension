@@ -1,4 +1,4 @@
-# Nifty Wallet Browser Extension
+# SoundMoneyCoin Wallet Browser Extension
 [![Build Status](https://circleci.com/gh/poanetwork/nifty-wallet.svg?style=shield)](https://circleci.com/gh/poanetwork/nifty-wallet) [![Coverage Status](https://coveralls.io/repos/github/poanetwork/nifty-wallet/badge.svg?branch=master)](https://coveralls.io/github/poanetwork/nifty-wallet?branch=master) [![Stories in Ready](https://badge.waffle.io/poanetwork/nifty-wallet.png?label=in%20progress&title=waffle.io)](https://waffle.io/poanetwork/nifty-wallet)
 
 ## Introduction
